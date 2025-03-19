@@ -1,168 +1,110 @@
-/* Importation de la police Roboto */
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+/* Mise à jour du fichier styles.css inspiré de Formula 1 */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-/* Définition des principales couleurs */
 :root {
-  --text-color: #fafafa; /* (Texte presque blanc) */
-  --background: #34495e; /* (Fond bleu foncé) */
-  --background-button: #bebebe;
-  --main-green: rgb(26, 188, 156);
-  --active-green: rgb(20, 156, 128);
-  --almost-black: #2d2d2d;
-}
-
-* {
-  color: var(--text-color);
+  --text-color: #fd0303;
+  --background: #0a0a0a;
+  --accent-red: #ff1e00;
+  --secondary-gray: #1a1a1a;
+  --button-hover: #ff5733;
+  --gold: #ffd700;
 }
 
 body {
   background-color: var(--background);
-  font: 14pt Roboto, Arial, sans-serif;
+  color: var(--text-color);
+  font-family: 'Orbitron', sans-serif;
   margin: 0;
   padding: 0;
-  width: 90%;
-  margin: 40px auto;
+  text-align: center;
 }
 
-/* Paragraphes "Aucun résultat..." et "Aucune recherche..." */
-p.info-vide {
-  font-style: italic;
+header {
+  background-size: cover;
+  padding: 60px 0;
+  box-shadow: 0px 4px 10px rgba(255, 30, 0, 0.8);
 }
 
-/* Partie En-tête */
+header img{
+  height: 200px;
+
+}
+
 h1 {
-  text-align: center;
-  font-variant: small-caps;
-  font-size: 2.5em;
-  color: var(--main-green);
+  font-size: 3.5em;
+  font-weight: bold;
+  color: var(--gold);
+  text-shadow: 4px 4px 6px black;
+  text-transform: uppercase;
 }
 
-#explication {
-  font-size: 1.2em;
-}
-
-/* Conteneur principal */
-#conteneur {
+.container {
   display: flex;
-  flex: 1;
-  margin: 30px auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
-/* Section Recherche (avec résultats) */
-#section-recherche {
-  margin-top: 0;
-  flex: 1 1 auto;
-}
-
-#bloc-recherche {
-  display: flex;
-  margin: 0 auto;
-  min-width: 450px;
-  flex-direction: row;
-}
-
-#bloc-recherche > input[type="text"],
-#bloc-recherche > button {
-  display: block;
+#bloc-recherche input[type="text"] {
+  width: 60%;
+  padding: 14px;
   font-size: 1.2em;
+  border: 3px solid var(--accent-red);
+  background: var(--secondary-gray);
+  color: white;
+  border-radius: 5px;
 }
 
-#bloc-recherche > input[type="text"] {
-  color: var(--almost-black);
-  flex: 1;
-  padding: 0.7em;
-  border: 0.3em solid var(--main-green);
-}
-
-#bloc-recherche > button {
-  padding: 0.8em 0.8em;
-  /* Bordure invisible pour que le hover ne bouge pas le bouton */
-  border: 1px solid var(--main-green);
-
-  /* Par défaut, les boutons sont en gris
-	 (S'ils sont "clicables", ils passent en vert) */
-  background-color: var(--background-button);
-}
-
-/* Apparences des boutons clicables */
-#bloc-recherche > button.btn_clicable {
-  background-color: var(--main-green);
-}
-
-#bloc-recherche > button:focus {
-  /* Pour éviter un affichage disgracieux
-		quand le bouton reste en focus */
-  outline: 0 !important;
-}
-
-#bloc-recherche > button.btn_clicable:hover {
+#bloc-recherche button {
+  padding: 14px 25px;
+  margin: 10px;
+  font-size: 1.2em;
+  border: 2px solid var(--gold);
+  background: var(--accent-red);
+  color: white;
   cursor: pointer;
-  border: 1px solid white;
+  transition: 0.3s;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-#bloc-recherche > button.btn_clicable:active {
-  background-color: var(--active-green);
+#bloc-recherche button:hover {
+  background: var(--button-hover);
+  border-color: var(--text-color);
 }
 
-/* GIF de chargement (caché par défaut) */
-#bloc-gif-attente {
-  display: none;
-  margin: 40px;
-  text-align: center;
-}
-
-#bloc-resultats p.res::before {
-  /* Affichage d'une flèche devant chaque résultat
-		(Cf. https://unicode-table.com/fr/21E8/ ) */
-  content: "\21E8\00A0";
-}
-
-/* Section de la barre de séparation */
-#section-separation {
-  border-left: 2px dashed var(--main-green);
-  margin: 0 20px;
-}
-
-/* Section des recherches favorites */
 #section-favoris {
-  flex: 0 0 300px;
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-#section-favoris h2 {
-  margin-top: 0;
-}
-
-#section-favoris p {
-  margin-bottom: 8px;
+  margin-top: 50px;
+  background: var(--secondary-gray);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px rgba(255, 30, 0, 0.5);
 }
 
 #liste-favoris li {
-  margin-bottom: 8px;
-  cursor: pointer;
-}
-
-#liste-favoris li span {
-  text-decoration: underline;
+  list-style: none;
+  padding: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 #liste-favoris li span:hover {
-  color: var(--main-green);
+  color: var(--accent-red);
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
-/* Media-query pour gérer l'affichage sur petit écran */
-@media (max-width: 900px) {
-  #conteneur {
-    flex-direction: column-reverse;
-  }
-
-  #section-separation {
-    border-top: 2px dashed var(--main-green);
-    margin: 0 -10px 40px -10px;
-  }
-
-  #section-favoris {
-    flex: 0;
-  }
+footer {
+  background: var(--secondary-gray);
+  padding: 20px;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 1em;
+  color: var(--gold);
 }
+
