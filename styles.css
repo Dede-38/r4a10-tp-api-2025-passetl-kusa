@@ -1,8 +1,8 @@
 /* Mise à jour du fichier styles.css inspiré de Formula 1 */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Rajdhani:wght@300;400;600&display=swap');
 
 :root {
-  --text-color: #fd0303;
+  --text-color: #ffffff;
   --background: #0a0a0a;
   --accent-red: #ff1e00;
   --secondary-gray: #1a1a1a;
@@ -13,26 +13,26 @@
 body {
   background-color: var(--background);
   color: var(--text-color);
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
 header {
-  background-size: cover;
   padding: 60px 0;
   box-shadow: 0px 4px 10px rgba(255, 30, 0, 0.8);
 }
 
-header img{
+header img {
   height: 200px;
-
+  width: 200px;
 }
 
 h1 {
   font-size: 3.5em;
   font-weight: bold;
+  font-family: 'Russo One', sans-serif;
   color: var(--gold);
   text-shadow: 4px 4px 6px black;
   text-transform: uppercase;
@@ -48,6 +48,11 @@ h1 {
   margin: auto;
 }
 
+.res{
+  display: block;
+  font-size: large;
+} 
+
 #bloc-recherche input[type="text"] {
   width: 60%;
   padding: 14px;
@@ -56,6 +61,7 @@ h1 {
   background: var(--secondary-gray);
   color: white;
   border-radius: 5px;
+  font-family: 'Rajdhani', sans-serif;
 }
 
 #bloc-recherche button {
@@ -70,6 +76,7 @@ h1 {
   border-radius: 8px;
   text-transform: uppercase;
   font-weight: bold;
+  font-family: 'Russo One', sans-serif;
 }
 
 #bloc-recherche button:hover {
@@ -91,6 +98,7 @@ h1 {
   font-size: 1.1em;
   font-weight: bold;
   transition: 0.3s;
+  font-family: 'Rajdhani', sans-serif;
 }
 
 #liste-favoris li span:hover {
@@ -107,4 +115,5 @@ footer {
   font-size: 1em;
   color: var(--gold);
 }
+
 

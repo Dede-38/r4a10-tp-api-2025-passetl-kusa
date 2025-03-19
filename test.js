@@ -7,8 +7,9 @@
  fetch('https://api.openf1.org/v1/laps?session_key=9161&driver_number=63&lap_number=8')
  .then(answer) */
 
-
- document.addEventListener("DOMContentLoaded", function () {
+/* JavaScript Amélioré pour éviter les doublons dans les résultats */
+/* JavaScript Amélioré pour éviter les doublons dans les résultats et afficher les pilotes avec photo */
+document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("SearchInput");
     const searchButton = document.getElementById("btn-lancer-recherche");
     const resultsContainer = document.getElementById("bloc-resultats");
@@ -16,21 +17,15 @@
     const favorisButton = document.getElementById("btn-favoris");
     const favorisList = document.getElementById("liste-favoris");
 
-    // Cacher le GIF de chargement au départ
     loadingGif.style.display = "none";
 
     searchButton.addEventListener("click", function () {
         let query = searchInput.value.trim();
-
         if (query === "") {
             alert("Veuillez entrer un mot-clé !");
             return;
         }
-
-        // Afficher le GIF de chargement
         loadingGif.style.display = "block";
-
-        // Appel API
         fetch(`https://api.openf1.org/v1/drivers?first_name=${encodeURIComponent(query)}`)
             .then(response => {
                 if (!response.ok) {
@@ -40,27 +35,29 @@
             })
             .then(data => {
                 loadingGif.style.display = "none";
-                
                 resultsContainer.innerHTML = "";
-
-                if (data.length === 0) {
-                    resultsContainer.innerHTML = `<p class="info-vide">(Aucun résultat trouvé)</p>`;
-                    return;
-                }
-
-                // Afficher les résultats
+                let uniqueResults = new Set();
                 data.forEach(driver => {
-                    let p = document.createElement("p");
-                    p.classList.add("res");
-                    p.textContent = `Pilote : ${driver.full_name} 
-                    | Nationalité : ${driver.country_code}
-                    |Equipe Actuelle : ${driver.team_name}`
-                    ;
-                    resultsContainer.appendChild(p);
-                   
+                    let resultText = `
+                        <div class="driver-card">
+                            <div class="driver-photo">
+                                <img src="${driver.headshot_url }" alt="Photo de ${driver.full_name}" />
+                            </div>
+                            <div class="driver-info">
+                                <p><strong>Pilote :</strong> ${driver.full_name}</p>
+                                <p><strong>Nationalité :</strong> ${driver.country_code}</p>
+                                <p><strong>Équipe Actuelle :</strong> ${driver.team_name}</p>
+                                <p><strong>Numéro :</strong> ${driver.driver_number}</p>
+                            </div>
+                        </div>`;
+                        if (!uniqueResults.has(resultText)) {
+                        uniqueResults.add(resultText);
+                        resultsContainer.innerHTML += resultText;
+                    }
                 });
-
-                // Activer le bouton favoris
+                if (uniqueResults.size === 0) {
+                    resultsContainer.innerHTML = `<p class="info-vide">(Aucun résultat trouvé)</p>`;
+                }
                 favorisButton.disabled = false;
             })
             .catch(error => {
@@ -70,4 +67,6 @@
             });
     });
 });
- 
+
+        
+        
