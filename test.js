@@ -8,7 +8,8 @@
  .then(answer) */
 
 /* JavaScript Amélioré pour éviter les doublons dans les résultats */
-/* JavaScript Amélioré pour éviter les doublons dans les résultats et afficher les pilotes avec photo */
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("SearchInput");
     const searchButton = document.getElementById("btn-lancer-recherche");
@@ -68,5 +69,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-        
-        

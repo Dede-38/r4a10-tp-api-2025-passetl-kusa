@@ -17,17 +17,34 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
+  
+  
 }
 
-header {
+
+main{
+  margin-top: 100px;
+}
+
+header {background-image: url(images/8wlzbk85wmj81.webp);
+  background-size: 100%;
   padding: 60px 0;
+  padding-bottom: 250px;
   box-shadow: 0px 4px 10px rgba(255, 30, 0, 0.8);
+  
 }
 
 header img {
   height: 200px;
   width: 200px;
 }
+
+#texte-recherche{
+  font-size: 2rem;
+  font-family: 'Russo One', sans-serif;
+
+}
+
 
 h1 {
   font-size: 3.5em;
@@ -44,8 +61,15 @@ h1 {
   align-items: center;
   flex-direction: column;
   padding: 20px;
-  max-width: 900px;
+  max-width: 90%;
   margin: auto;
+  
+}
+
+
+
+#explication{
+  font-size: 2rem;
 }
 
 .res{
