@@ -3,7 +3,7 @@
   <head>
     <title>Page F1</title>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon-js.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/le-logo-de-la-formule-1.webp" />
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -14,7 +14,7 @@
 
        <div class="container">
         <p id="explication">
-            <strong>Cette page permet de rechercher des pilotes, pistes, courses... via l'API publique
+            <strong>Vous pouvez rechercher des pilotes, pistes, courses de partout dans le monde via l'API publique
             de <a href="https://openf1.org/" target="_blank">openf1.org</a>.<br />
             Saisir le nom d'un pilote, course, piste... pour rechercher les résultats
             correspondants, et enregistrer vos recherches favorites pour les
@@ -71,7 +71,15 @@
           />
         </div>
         <div id="bloc-resultats">
-          <p class="res">Résultat 1 ...</p>
+     
+          <!-- <div class="driver-card">
+            <div class="driver-photo">
+            </div>
+            <div class="driver-info">
+            </div>
+          </div> -->
+         
+          <p class="res">Faites un recherche juste en ci-dessus 	↑↑↑</p>
           <p class="res">Résultat 2 ...</p>
           <p class="res">Résultat 3 ...</p>
           <p class="info-vide">(Aucun résultat trouvé)</p>
@@ -87,9 +95,10 @@
         <p>
           Cliquer sur une recherche favorite ci-dessus pour relancer celle-ci :
         </p>
+        <!-- TODO :separer les favoris par categorie ; pilotes, pistes, courses etc.  -->
         <ul id="liste-favoris">
           <li>
-            <span title="Cliquer pour relancer la recherche">Grenoble</span>
+            <span title="Cliquer pour relancer la recherche">Lewis Hamilton</span>
             <img
               src="images/croix.svg"
               alt="Icone pour supprimer le favori"
@@ -98,7 +107,7 @@
             />
           </li>
           <li>
-            <span title="Cliquer pour relancer la recherche">Lyon</span>
+            <span title="Cliquer pour relancer la recherche">Max VERSTAPPEN</span>
             <img
               src="images/croix.svg"
               alt="Icone pour supprimer le favori"
@@ -107,7 +116,7 @@
             />
           </li>
           <li>
-            <span title="Cliquer pour relancer la recherhe.">Web</span>
+            <span title="Cliquer pour relancer la recherhe.">Charles LECLERC</span>
             <img
               src="images/croix.svg"
               alt="Icone pour supprimer le favori"
@@ -120,5 +129,7 @@
       </section>
     </main>
   </body>
-  <script src="/test.js"> </script>
+  <!-- <script src="testes/test.js"> </script> -->
+   <script type="module" src="js/Controller.js"></script>
+
 </html>

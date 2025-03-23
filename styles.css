@@ -1,6 +1,20 @@
 /* Mise à jour du fichier styles.css inspiré de Formula 1 */
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Rajdhani:wght@300;400;600&display=swap');
 
+@font-face {
+  font-family: 'Formula1';
+  src: url('/font/Formula1-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Formula1-Bold';
+  src: url('/font/Formula1-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 :root {
   --text-color: #ffffff;
   --background: #0a0a0a;
@@ -13,7 +27,7 @@
 body {
   background-color: var(--background);
   color: var(--text-color);
-  font-family: 'Rajdhani', sans-serif;
+  font-family:'Rajdhani', sans-serif;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -41,7 +55,7 @@ header img {
 
 #texte-recherche{
   font-size: 2rem;
-  font-family: 'Russo One', sans-serif;
+  font-family: 'Formula1-Bold', 'Russo One', sans-serif;
 
 }
 
@@ -49,7 +63,7 @@ header img {
 h1 {
   font-size: 3.5em;
   font-weight: bold;
-  font-family: 'Russo One', sans-serif;
+  font-family: 'Formula1-Bold', 'Russo One', sans-serif;
   color: var(--gold);
   text-shadow: 4px 4px 6px black;
   text-transform: uppercase;
@@ -108,6 +122,24 @@ h1 {
   border-color: var(--text-color);
 }
 
+#bloc-resultats {
+  margin-top:30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.driver-card {
+   margin:20px;
+   padding: 10px;
+   border-width: 2px;
+   border-radius: 5%;
+   border-style: solid;
+
+}
+
+
 #section-favoris {
   margin-top: 50px;
   background: var(--secondary-gray);
@@ -140,4 +172,6 @@ footer {
   color: var(--gold);
 }
 
-
+a:visited {
+  color: red;
+}
