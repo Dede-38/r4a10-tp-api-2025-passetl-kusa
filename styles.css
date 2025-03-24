@@ -131,6 +131,8 @@ h1 {
 }
 
 .driver-card {
+  height: 200px;
+  width: 350px;
    margin:20px;
    padding: 10px;
    border-width: 2px;

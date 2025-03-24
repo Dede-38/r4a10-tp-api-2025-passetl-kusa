@@ -5,10 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const loadingGif = document.getElementById("bloc-gif-attente");
     const favorisButton = document.getElementById("btn-favoris");
     const favorisList = document.getElementById("liste-favoris");
-    
     loadingGif.style.display = "none";
     window.onload = () => searchInput.focus();
 
+
+    fetch("https://api.openf1.org/v1/drivers")
+    .then(response => response.json())
+    .then(data => {
+        allDrivers = data.filter(driver=> driver.headshot_url&& driver.headshot_url.trim() !=="");
+        displayResults(""); // Afficher tous les pilotes au démarrage
+    })
+    .catch(error => console.error("Erreur lors du chargement des pilotes :", error));
+    
     function getFavoris() {
         return JSON.parse(localStorage.getItem("favoris")) || [];
     }
@@ -58,6 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
             favorisButton.style.backgroundColor = "red";
         }
     }
+
+
 
     favorisButton.addEventListener("click", function () {
         const query = searchInput.value.trim();
