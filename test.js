@@ -26,6 +26,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function displayResults(query) {
+    searchButton.addEventListener("click", function () {
+        let query = searchInput.value.trim();
+        if (query === "") {
+            alert("Veuillez entrer un mot-clé !");
+            return;
+        }
+
         loadingGif.style.display = "block";
         resultsContainer.innerHTML = "";
         let uniqueResults = new Set();
@@ -59,4 +66,53 @@ document.addEventListener("DOMContentLoaded", function () {
         loadingGif.style.display = "none";
         favorisButton.disabled = false;
     }
+
+        fetch(`https://api.openf1.org/v1/drivers?first_name=${encodeURIComponent(query)}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erreur lors de la requête API");
+                }
+                return response.json();
+            })
+            .then(data => {
+                loadingGif.style.display = "none";
+                resultsContainer.innerHTML = "";
+                let uniqueResults = new Set();
+                if (data.length === 0) {
+                    resultsContainer.innerHTML = `<p class="info-vide">(Aucun pilote trouvé)</p>`;
+                    return;
+                }
+                data.forEach(driver => {
+                    if (!driver.full_name || !driver.country_code || !driver.team_name) return;
+                    let resultText = `
+                        <div class="driver-card" data-driver-id="${driver.id}">
+                            <div class="driver-photo">
+                                <img src="${driver.headshot_url || 'default-driver.png'}" alt="Photo de ${driver.full_name}" />
+                            </div>
+                            <div class="driver-info">
+                                <p><strong>Pilote :</strong> ${driver.full_name}</p>
+                                <p><strong>Nationalité :</strong> ${driver.country_code}</p>
+                                <p><strong>Équipe Actuelle :</strong> ${driver.team_name || 'Non renseigné'}</p>
+                                <p><strong>Numéro :</strong> ${driver.driver_number || 'N/A'}</p>
+                            </div>
+                        </div>`;
+
+                    if (!uniqueResults.has(driver.id)) {
+                        uniqueResults.add(driver.id);
+                        resultsContainer.innerHTML += resultText;
+                    }
+                });
+
+                favorisButton.disabled = false;
+            })
+            .catch(error => {
+                console.error("Erreur :", error);
+                resultsContainer.innerHTML = `<p class="info-vide">Une erreur est survenue lors de la récupération des pilotes.</p>`;
+                loadingGif.style.display = "none";
+            });
+    });
 });
+
+
+
+
