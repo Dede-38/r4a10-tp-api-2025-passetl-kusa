@@ -69,6 +69,20 @@ h1 {
   text-transform: uppercase;
 }
 
+.driver-card{
+  display: flex;
+  padding-left: 250px;
+  width: 80%;
+  height: auto;
+}
+
+.driver-card img {
+  height: 100px;
+  width: 100px;
+  padding-right: 20px;
+}
+
+
 .container {
   display: flex;
   justify-content: center;
@@ -132,14 +146,19 @@ h1 {
 
 .driver-card {
   height: 200px;
-  width: 350px;
-   margin:20px;
-   padding: 10px;
+  width: 450px;
+   margin:30px;
    border-width: 2px;
    border-radius: 5%;
    border-style: solid;
 
 }
+
+.driver-photo{
+  height: 100px;
+  width: 150px;
+}
+
 
 
 #section-favoris {
