@@ -24,7 +24,43 @@
       
     </header>
     <hr />
-
+    <section id="section-favoris">
+      <h2>Recherches favorites</h2>
+      <p>
+        Cliquer sur une recherche favorite ci-dessus pour relancer celle-ci :
+      </p>
+      <!-- TODO :separer les favoris par categorie ; pilotes, pistes, courses etc.  -->
+      <ul id="liste-favoris">
+        <li>
+          <span title="Cliquer pour relancer la recherche">Lewis Hamilton</span>
+          <img
+            src="images/croix.svg"
+            alt="Icone pour supprimer le favori"
+            width="15"
+            title="Cliquer pour supprimer le favori"
+          />
+        </li>
+        <li>
+          <span title="Cliquer pour relancer la recherche">Max VERSTAPPEN</span>
+          <img
+            src="images/croix.svg"
+            alt="Icone pour supprimer le favori"
+            width="15"
+            title="Cliquer pour supprimer le favori"
+          />
+        </li>
+        <li>
+          <span title="Cliquer pour relancer la recherhe.">Charles LECLERC</span>
+          <img
+            src="images/croix.svg"
+            alt="Icone pour supprimer le favori"
+            width="15"
+            title="Cliquer pour supprimer le favori"
+          />
+        </li>
+      </ul>
+      <p class="info-vide">(Aucune recherche favorite)</p>
+    </section>
     <main id="conteneur">
       <!-- Section de recherche (avec résultats) -->
       <section id="section-recherche">
@@ -85,6 +121,8 @@
           <p class="info-vide">(Aucun résultat trouvé)</p>
         </div>
       </section>
+      <h1>Liste des Grands prix</h1>
+
       <div id="grand-prix-container">
         <table>
 
@@ -96,43 +134,7 @@
       <section id="section-separation"></section>
 
       <!-- Section des recherches favorites -->
-      <section id="section-favoris">
-        <h2>Recherches favorites</h2>
-        <p>
-          Cliquer sur une recherche favorite ci-dessus pour relancer celle-ci :
-        </p>
-        <!-- TODO :separer les favoris par categorie ; pilotes, pistes, courses etc.  -->
-        <ul id="liste-favoris">
-          <li>
-            <span title="Cliquer pour relancer la recherche">Lewis Hamilton</span>
-            <img
-              src="images/croix.svg"
-              alt="Icone pour supprimer le favori"
-              width="15"
-              title="Cliquer pour supprimer le favori"
-            />
-          </li>
-          <li>
-            <span title="Cliquer pour relancer la recherche">Max VERSTAPPEN</span>
-            <img
-              src="images/croix.svg"
-              alt="Icone pour supprimer le favori"
-              width="15"
-              title="Cliquer pour supprimer le favori"
-            />
-          </li>
-          <li>
-            <span title="Cliquer pour relancer la recherhe.">Charles LECLERC</span>
-            <img
-              src="images/croix.svg"
-              alt="Icone pour supprimer le favori"
-              width="15"
-              title="Cliquer pour supprimer le favori"
-            />
-          </li>
-        </ul>
-        <p class="info-vide">(Aucune recherche favorite)</p>
-      </section>
+     
      
     </main>
   </body>
