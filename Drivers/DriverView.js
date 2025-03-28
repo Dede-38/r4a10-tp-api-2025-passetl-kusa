@@ -85,7 +85,7 @@ export class DriverView {
       this.favoris.forEach(driverName => {
         const li = document.createElement("li");
         li.innerHTML = `
-          <span title="Cliquer pour relancer la recherche">${driverName}</span>
+          <span title="Cliquer pour relancer la recherche" class="search-favori">${driverName}</span>
           <img src="images/croix.svg" alt="Icône pour supprimer le favori" width="15" title="Cliquer pour supprimer le favori" class="remove-favori" data-name="${driverName}" />
         `;
         this.favorisList.appendChild(li);
@@ -105,6 +105,21 @@ export class DriverView {
         });
       });
     }
+
+    bindSearchFavoris() {
+      const searchButtons = this.favorisList.querySelectorAll(".search-favori");
+      removeButtons.forEach(img => {
+        searchButtons.addEventListener("click", () => {
+          let query = searchInput.value.trim().toLowerCase();
+      if (query === "") {
+          alert("Veuillez entrer un mot-clé !");
+          return;
+      }
+      displayResults(query);
+        });
+      });
+    }
+
   
     updateResultsButton(driverName) {
       const button = this.resultsContainer.querySelector(`.btn-favori[data-name="${driverName}"]`);
