@@ -1,4 +1,6 @@
-// DriverController.js - Gère la logique de l'application et relie le modèle et la vue
+import { DriverModel } from "./DriverModel.js";
+import { DriverView } from "./DriverView.js";
+
 class DriverController {
     constructor(model, view) {
         this.model = model;
