@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         displayResults(""); // Afficher tous les pilotes au démarrage
     })
     .catch(error => console.error("Erreur lors du chargement des pilotes :", error));
-    
+
     function getFavoris() {
         return JSON.parse(localStorage.getItem("favoris")) || [];
     }

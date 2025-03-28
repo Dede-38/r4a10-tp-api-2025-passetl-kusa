@@ -196,3 +196,24 @@ footer {
 a:visited {
   color: red;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+button {
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #007BFF; /* Une couleur pour le survol */
+  color: white;
+}
