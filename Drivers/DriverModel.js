@@ -1,4 +1,4 @@
-class DriverModel {
+export class DriverModel {
     constructor() {
         this.allDrivers = [];
     }

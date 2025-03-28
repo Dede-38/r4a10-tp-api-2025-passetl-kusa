@@ -1,4 +1,4 @@
-class DriverView {
+export class DriverView {
     constructor() {
         this.searchInput = document.getElementById("SearchInput");
         this.resultsContainer = document.getElementById("bloc-resultats");
