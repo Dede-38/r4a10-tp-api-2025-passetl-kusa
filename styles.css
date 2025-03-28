@@ -214,6 +214,143 @@ button {
 }
 
 button:hover {
-  background-color: #007BFF; /* Une couleur pour le survol */
   color: white;
 }
+/* 
+********************************** */
+
+
+
+
+/* Style global pour les cartes de pilote */
+.driver-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border: 2px solid #ccc; /* couleur par défaut, elle pourra être surchargée inline */
+  border-radius: 8px;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.driver-card:hover {
+  border-color: #888;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Style pour la photo du pilote */
+.driver-photo img {
+  width: 80px;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+/* Style pour les informations du pilote */
+.driver-info {
+  text-align: left;
+  flex: 1;
+}
+
+.driver-info p {
+  margin: 5px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Style pour le bouton favoris */
+.btn-favori {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.2s ease;
+}
+
+.btn-favori:hover {
+  transform: scale(1.1);
+}
+
+.btn-favori img {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+/* Style pour la liste des favoris */
+#liste-favoris {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#liste-favoris li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+#liste-favoris li span {
+  cursor: pointer;
+  color: #c9c9c9;
+  transition: color 0.2s ease;
+}
+
+#liste-favoris li span:hover {
+  color: #005fa3;
+}
+
+#liste-favoris li img {
+  cursor: pointer;
+}
+
+#liste-favoris li img:hover {
+  transform: scale(1.3);
+}
+
+/* Carte de pilote */
+.driver-card {
+  position: relative; /* Permet le positionnement absolu de l'étoile */
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border: 2px solid #ccc; /* Couleur par défaut */
+  border-radius: 8px;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.driver-card:hover {
+  border-color: #888;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Bouton favori positionné en haut à droite */
+.btn-favori {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease;
+  
+}
+
+.btn-favori:hover {
+  transform: scale(1.3);
+  background-color: none;
+}
+.btn-favori img {
+  padding-right: 0px;
+}
+
+/* Taille de l'icône de l'étoile */
+
